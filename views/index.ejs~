@@ -11,8 +11,17 @@
     <p>Welcome to <%= title %></p>
     <div id = "Location Input">
       <form method = "POST" action = "geolocation.ejs" id = "Location Input">
-	<button name = "Store Location" type = "submit" value = "HTML">Store Location!<button/> 
+<<<<<<< HEAD
+	<button name = "Store Location" type = "submit" value = "HTML">Store Location!</button> 
      </form>	
     </div>  
   </body>
 </html>
+=======
+        <button name = "Store Location" type = "submit" value = "HTML">Store Location!</button>
+     </form>
+    </div>
+  </body>
+</html>
+
+>>>>>>> 7493ee0269f7942526c1fda9bf804282cbc74d07
