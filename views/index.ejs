@@ -10,9 +10,9 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <div id = "Location Input">
-      <form method = "POST" action = "geolocation.ejs" id = "Location Input">
-	<button name = "Store Location" type = "submit" value = "HTML">Store Location!</button> 
-     </form>	
+      <form method = "GET" action = "/geolocation">
+	<button name = "Store Location" type = "submit" value = "HTML">Store Location!</button>
+      </form>
     </div>  
   </body>
 </html>
