@@ -2,14 +2,18 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <!-- <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' /> --> 
+    <link rel='stylesheet' href='/stylesheets/style.css' style = "text/css" />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' style = "text/css" />
     <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js" type = "text/javascript"></script>
     <script src = "http://code.jquery.com/jquery-1.9.1.js"></script>
   </head>
   <body>
-    <h2>Welcome to Leclado!</h2>
-    <p> Inspired by Lewis, Clark, and Dora - our favorite explorers. </p>
+    <div class = "title">
+      <o>Welcome to Leclado!</p>
+    </div>
+    <div class = "subtext"> 
+      <p> Inspired by Lewis, Clark, and Dora - our favorite explorers. </p>
+    </div>
     <div class = "geolocation">
       <a id = "findlocation" href = "/geolocation" style = "text-align:center">Find my location!</a>
     </div>
