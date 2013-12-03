@@ -14,11 +14,6 @@
 			// location was not inserted
 			// we should figure out what to do in this case
 		}  
-		else
-		{
-			render("geolocation.ejs");	
-			// this isn't going to do what it's supposed to do
-		}
 		
 	}
 
