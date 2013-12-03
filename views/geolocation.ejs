@@ -104,7 +104,8 @@
  
  
                 // Check to see if this browser supports geolocation.
-                if (navigator.geolocation) {
+                if (navigator.geolocation) 
+                {
  
                         // This is the location marker that we will be using
                         // on the map. Let's store a reference to it here so
@@ -118,12 +119,14 @@
                         // callback - the error handler - and the third
                         // argument - our configuration options - are optional.
                         navigator.geolocation.getCurrentPosition(
-                                function( position ){
+                                function( position )
+                                {
  
                                         // Check to see if there is already a location.
                                         // There is a bug in FireFox where this gets
                                         // invoked more than once with a cahced result.
-                                        if (locationMarker){
+                                        if (locationMarker)
+                                        {
                                                 return;
                                         }
  
@@ -145,7 +148,8 @@
                                         map.panTo(newCenter)
  
                                 },
-                                function( error ){
+                                function( error )
+                                {
                                         console.log( "Something went wrong: ", error );
                                 },
                                 {
@@ -167,7 +171,8 @@
                         // monitor the position. As such, it returns a "timer ID"
                         // that can be used to later stop the monitoring.
                         var positionTimer = navigator.geolocation.watchPosition(
-                                function( position ){
+                                function( position )
+                                {
  
                                         // Log that a newer, perhaps more accurate
                                         // position has been found.
@@ -192,17 +197,22 @@
  
                         // If the position hasn't updated within 5 minutes, stop
                         // monitoring the position for changes.
-                        setTimeout(
-                                function(){
+                        setTimeout
+                        (
+                                function()
+                                {
                                         // Clear the position watcher.
                                         navigator.geolocation.clearWatch( positionTimer );
                                 },
                                 (1000 * 60 * 5)
                         );
  
-                } else{
+                } 
+                else
+                {
                         mapContainer.innerHTML = "Your browser does not support GeoLocation. Get a better one.";
                 }
+                
  
         </script>
  
