@@ -7,10 +7,12 @@
      * Problem Set 7
      *
      * Global constants.
+     * we're going to need to change these constant values 
+     * once we set up the SQL server
      */
 
     // our database's name
-    define("DATABASE", "pset7");
+    define("DATABASE", "leclado");
 
     // our database's password
     define("PASSWORD", "leclado");
