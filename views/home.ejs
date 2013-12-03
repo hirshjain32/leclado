@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Just Play </title>
+	<link href = "landpage.css" rel = "stylesheet" type = "text/css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src = "home.js"></script>
+</head>
+<body>
+	<div id = "nav">
+		<h1 id = "title"> justplay </h1>
+	</div>
+	<div class = "darker">
+		<div id = "content">
+			<h1> connect to the games you love, without the hassle.</h1>
+			<a id = "facebook" href = "/auth/facebook"><img src = "facebook_login.png"/></a>
+			<h5><a id = "guest" href = "#">Or, sign in as a guest.</a></h5>
+
+		</div>
+	</div>
+	<div id = "guestLogin" class = "modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <h3 class = "formTitle"> Guest Login </h3> 
+      <h5 class = "formTitle"> We need just a little bit of information before we can sign you in.</h5>
+	   	<div id = "formContent">   
+	      <form method = "POST" action = "guestLogin" id = "guestForm">
+	      	<input name = "name" type = "text" placeholder = "Full Name" required/><br>
+	      	<input name = "email" type = "email" placeholder = "Email" required/><br>
+	      	<input type = "submit">
+	      </form>
+    </div>
+	     </div>
+    <div class="modal-footer">
+      <button class="buttonRed" data-dismiss="modal" aria-hidden="true" style="">Close</button>
+    </div>
+  </div>
+  <script src = "modals.js"></script>
+</body>
+</html>
