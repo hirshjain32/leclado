@@ -1,0 +1,87 @@
+body{
+        padding: 0;
+        font-family: 'Roboto';
+        margin: 0;
+        background: url('background.jpeg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+#nav{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 75px;
+        background-color: #000000;
+        z-index: 2;
+        float: left;
+        /* Adds shadow to the bottom of the bar */
+        -webkit-box-shadow: 0px 0px 8px 0px #000000;
+        -moz-box-shadow: 0px 0px 8px 0px #000000;
+         box-shadow: 0px 0px 8px 0px #000000;
+        /* Adds the transparent background */
+}
+
+#title{
+        color: white;
+}
+
+#content{
+        z-index: 1000;
+        color: white;
+        text-align: center;
+        margin-top: 18%;
+        opacity: 1;
+}
+
+.darker{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+}
+
+.lighter{
+        opacity: 1;
+}
+
+a#guest{
+        text-decoration: none;
+        color: white;
+}
+
+a#guest:hover{
+        opacity: 0.7;
+}
+
+a#facebook:hover{
+        opacity: 0.8;
+}
+
+
+@media only screen and (max-width: 1050px){
+        #content{
+                z-index: 1000;
+                color: white;
+                text-align: center;
+                margin-top: 35%;
+                opacity: 1;
+        }
+        #guestLogin{
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 300px;
+        }
+}
+
+.formTitle{
+        text-align:center;
+}
+
+#formContent{
+        text-align: center;
+}
