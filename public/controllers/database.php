@@ -14,18 +14,20 @@
 		if ($result === false)
 		{
 			// location was not inserted
-			// re-renders the geolocation page
-			// our "render" function is going to need some work
-			// right now it renders php files 
-			// but it presumably won't work on ejs files
-			render("geolocation.ejs"); 
+			// alerts the user
+            // re-renders the geolocation page
+			<script language = 'javascript'>
+                alert('Your location failed to record.');
+            </script>
+            render("geolocation.ejs");
 		}  
 		else
 		{
 			// location was successfully inserted
 			// it should also render geolocation
 			// but it needs to call some function to convert the new location
-			// into a placemark to add to the map		
+			// into a placemark to add to the map
+            render("onsuccess.ejs");
 		}
 		
 	}
