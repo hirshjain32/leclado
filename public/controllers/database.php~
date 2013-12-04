@@ -13,6 +13,7 @@
 		{
 			// location was not inserted
 			// we should figure out what to do in this case
+			echo 'the location was not added successfully.';
 		}  
 		
 	}
