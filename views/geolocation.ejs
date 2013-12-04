@@ -100,31 +100,10 @@
                         // Return the new marker reference.
                         return( marker );
                 }
- 
- 
-                // I update the marker's position and label.
-                function updateMarker( marker, latitude, longitude, label ){
-                        // Update the position.
-                        marker.setPosition(
-                                new google.maps.LatLng(
-                                        latitude,
-                                        longitude
-                                )
-                        );
- 
-                        // Update the title if it was provided.
-                        if (label){
- 
-                                marker.setTitle( label );
- 
-                        }
-                }
- 
- 
-                // -------------------------------------------------- //
-                // -------------------------------------------------- //
-                // -------------------------------------------------- //
-                // -------------------------------------------------- //
+
+                
+               
+               
  
  
                 // Check to see if this browser supports geolocation.
@@ -217,20 +196,6 @@
  
                                 }
                         );
-
- 
-                        // If the position hasn't updated within 5 minutes, stop
-                        // monitoring the position for changes.
-                        setTimeout
-                        (
-                                function()
-                                {
-                                        // Clear the position watcher.
-                                        navigator.geolocation.clearWatch( positionTimer );
-                                },
-                                (1000 * 60 * 5)
-                        );
- 
                 } 
                 else
                 {
