@@ -5,8 +5,8 @@
 	if ($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 	
-		$lat = $_SESSION["lat"];
-		$long = $_SESSION["long"];
+		$lat = $_POST["lat"];
+		$long = $_POST["long"];
 		$name = $_POST["name"];
 
 		// have we implemented query?
