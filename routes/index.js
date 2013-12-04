@@ -10,3 +10,6 @@ exports.index = function(req, res){
 exports.geo = function(req, res){
     res.render('geolocation');
 };
+exports.onsuccess = function(req,res){
+    res.render('onsuccess');
+};

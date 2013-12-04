@@ -14,14 +14,20 @@
 		if ($result === false)
 		{
 			// location was not inserted
-			// we should figure out what to do in this case
+			// re-renders the geolocation page
+			// our "render" function is going to need some work
+			// right now it renders php files 
+			// but it presumably won't work on ejs files
+			render("geolocation.ejs"); 
 		}  
 		else
 		{
-			render("geolocation.ejs");	
-			// this isn't going to do what it's supposed to do
+			// location was successfully inserted
+			// it should also render geolocation
+			// but it needs to call some function to convert the new location
+			// into a placemark to add to the map		
 		}
 		
 	}
-	// don't we need a redirect here? perhaps to the home page?
+	
 ?>

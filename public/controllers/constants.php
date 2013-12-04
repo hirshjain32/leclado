@@ -15,12 +15,15 @@
     define("DATABASE", "leclado");
 
     // our database's password
-    define("PASSWORD", "leclado");
+    // you should change this to your actual password
+    // that you set as your sql database password
+    // before you try to query
+    define("PASSWORD", "friend100");
 
     // our database's server
     define("SERVER", "localhost");
 
     // our database's username
-    define("USERNAME", "leclado");
+    define("USERNAME", "root");
 
 ?>

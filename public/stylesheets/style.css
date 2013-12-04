@@ -14,6 +14,15 @@ body {
  	opacity: 0.9;
 }
 
+.onsuccess {
+	text-align: center;
+ 	font-size: 30px;
+ 	font-color: ;
+ 	margin: 50px;
+ 	font-family: 'Fenix', serif;
+ 	opacity: 0.9;
+}
+
 .title {
 	text-align: center;
 	color: #FFFFFF;
