@@ -2,17 +2,24 @@
   overflow: hidden;
 }
 
+.container .content .form-group .form-control .btn-default {
+  
+}
+
 aside {
   height: 90px;
   width: 185px;
-  background: lightgreen;
+  background: #FFFFFF;
   float:left;
-  padding:5px;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 20px;
+
 }
 
 .content {
   height: 90px;
-  background:lightblue;
-  padding:5px;
+  background: #C7BEBE;
   margin-left: 195px;
+  padding: 3px;
 }
