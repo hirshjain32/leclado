@@ -1,0 +1,18 @@
+.container {
+  overflow: hidden;
+}
+
+aside {
+  height: 90px;
+  width: 185px;
+  background: lightgreen;
+  float:left;
+  padding:5px;
+}
+
+.content {
+  height: 90px;
+  background:lightblue;
+  padding:5px;
+  margin-left: 195px;
+}

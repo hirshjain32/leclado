@@ -1,0 +1,16 @@
+.container {
+  overflow: hidden;
+}
+
+aside {
+  width: 185px;
+  background: lightgreen;
+  float:left;
+  padding:5px;
+}
+
+.content {
+  background:lightblue;
+  padding:5px;
+  margin-left: 195px;
+}
