@@ -189,8 +189,8 @@
 		
 		   var formInfo = document.forms['info'];
 		   
-		   forminfo.elements["lat"].value = latitude;
-		   forminfo.elements["long"].value = longitude;
+		   formInfo.elements["lat"].value = latitude;
+		   formInfo.elements["long"].value = longitude;
 		}
  
         </script>
@@ -209,7 +209,7 @@
 		<input type = "hidden" name = "lat" value = ""/>
 		<input type = "hidden" name = "long" value = ""/>
                 <div class = "form-group">
-                  <input type = "submit" name = "submitted" value = "info" onSubmit = "AddPostData();">Save My Location </input>
+                  <input type = "submit" name = "submitted" value = "Save My Location" onSubmit = "AddPostData();"/>
                 </div>
               </fieldset>
             </form>
