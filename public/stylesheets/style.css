@@ -3,7 +3,9 @@ body {
   	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   	margin: 0;
 	background: url('/img/background.jpg') no-repeat center center fixed;
+	z-index: -25;
 }
+
 
 .geolocation {
 	text-align: center;
@@ -12,12 +14,13 @@ body {
  	margin: 50px;
  	font-family: 'Fenix', serif;
  	opacity: 0.9;
+ 	z-index: 1;
 }
 
 .onsuccess {
 	text-align: center;
  	font-size: 30px;
- 	font-color: ;
+ 	font-color: #FFFFFF;
  	margin: 50px;
  	font-family: 'Fenix', serif;
  	opacity: 0.9;
@@ -29,6 +32,7 @@ body {
 	font-size: 100px;
 	margin: 50px;
 	font-family: 'Fenix', serif;
+	z-index: 3;
 }
 
 .subtext {
@@ -37,4 +41,5 @@ body {
 	color: #FFFFFF;
 	font-size: 30px;
 	font-family: 'Fenix', serif;
+	z-index: 4;
 }
