@@ -114,3 +114,16 @@ function render($template, $values = [])
         trigger_error("Invalid template: $template", E_USER_ERROR);
     }
 }
+
+/**
+ * Calculates the distance between two locations in miles
+ */
+function distance($lat1, $long1, $lat2, $long2)
+{
+    $theta = $long1 - $long2;
+    $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+    $dist = acos($dist);
+    $dist = rad2deg($dist);
+    $miles = $dist * 60 * 1.1515;
+    return abs($miles);
+}

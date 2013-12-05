@@ -24,10 +24,10 @@
 		else
 		{
 			// location was successfully inserted
-			// it should also render geolocation
-			// but it needs to call some function to convert the new location
-			// into a placemark to add to the map
-            render("onsuccess.ejs");
+			
+            // calls a function that
+            render("../public/controllers/makeplacemarks.php", ["lat" => $lat, "long" => $long]);
+            
 		}
 		
 	}

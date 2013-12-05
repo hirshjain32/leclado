@@ -11,6 +11,11 @@
      * once we set up the SQL server
      */
 
+    // the max distance between a user and locations
+    // that will be displayed on the map
+    // sets max distance to ten miles
+    define("MAXDISTANCE", 10)
+    
     // our database's name
     define("DATABASE", "leclado");
 
