@@ -1,4 +1,6 @@
 <?php
+	error_reporting(-1);
+
 	require("functions.php");
     require("constants.php");
 	
@@ -16,11 +18,11 @@
 		{
 			// location was not inserted
 			// alerts the user
-            // re-renders the geolocation page
+            		// re-renders the geolocation page
 			<script language = 'javascript'>
-                alert('Your location failed to record.');
-            </script>
-            render("geolocation.ejs");
+                	alert('Your location failed to record.');
+            		</script>
+            		render("geolocation.ejs");
 		}  
 		else
 		{
@@ -43,7 +45,6 @@
             // currently renders to onsuccess.ejs
             //
             render("onsuccess.ejs", ["placemarks" => $placemarks]);
-            
 		}
 		
 	}
