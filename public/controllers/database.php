@@ -1,4 +1,6 @@
 <?php
+	error_reporting(-1);
+
 	require("functions.php");
 	
 	// if form was submitted
@@ -15,19 +17,18 @@
 		{
 			// location was not inserted
 			// alerts the user
-            // re-renders the geolocation page
+            		// re-renders the geolocation page
 			<script language = 'javascript'>
-                alert('Your location failed to record.');
-            </script>
-            render("geolocation.ejs");
+                	alert('Your location failed to record.');
+            		</script>
+            		render("geolocation.ejs");
 		}  
 		else
 		{
 			// location was successfully inserted
 			
-            // calls a function that
-            render("../public/controllers/makeplacemarks.php", ["lat" => $lat, "long" => $long]);
-            
+			 // calls a function that
+            		 render("../public/controllers/makeplacemarks.php", ["lat" => $lat, "long" => $long]);
 		}
 		
 	}

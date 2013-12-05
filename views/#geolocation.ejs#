@@ -168,7 +168,7 @@
           </aside>
 
           <div class="content">
-            <form action = "database.php" method = "post">
+            <form action = "database.php" method = "POST">
                 <div class = "form-group">
                   <input class = "form-control" name = "name" placeholder = "Location Name" id = "name" type = "text"/>
                 </div>

@@ -84,11 +84,13 @@
                 
                
                
- 
+		var geolocation = {};
  
                 // Check to see if this browser supports geolocation.
                 if (navigator.geolocation) 
                 {
+		        geolocation.latitude = 0;
+		        geolocation.longitude = 0;
  
                         // This is the location marker that we will be using
                         // on the map. Let's store a reference to it here so
@@ -104,6 +106,8 @@
                         navigator.geolocation.getCurrentPosition(
                                 function( position )
                                 {
+		                        geolocation.latitude = position.coords.latitude;
+		                        geolocation.longitude = position.coords.longitude;
  
                                         // Check to see if there is already a location.
                                         // There is a bug in FireFox where this gets
@@ -141,41 +145,6 @@
                                         enableHighAccuracy: true
                                 }
                         );
- 
- 
-                        // Now tha twe have asked for the position of the user,
-                        // let's watch the position to see if it updates. This
-                        // can happen if the user physically moves, of if more
-                        // accurate location information has been found (ex.
-                        // GPS vs. IP address).
-                        //
-                        // NOTE: This acts much like the native setInterval(),
-                        // invoking the given callback a number of times to
-                        // monitor the position. As such, it returns a "timer ID"
-                        // that can be used to later stop the monitoring.
-                        var positionTimer = navigator.geolocation.watchPosition(
-                                function( position )
-                                {
- 
-                                        // Log that a newer, perhaps more accurate
-                                        // position has been found.
-                                        console.log( "Newer Position Found" );
- 
-                                        // Set the new position of the existing marker.
-                                        updateMarker(
-                                                locationMarker,
-                                                position.coords.latitude,
-                                                position.coords.longitude,
-                                                "Updated / Accurate Position"
-                                        );
-                                        var newCenter = new google.maps.LatLng(
-                                                position.coords.latitude,
-                                                position.coords.longitude
-                                        );
-                                        map.panTo(newCenter);
- 
-                                }
-                        );
                 } 
                 else
                 {
@@ -184,13 +153,11 @@
                 
 
 		function AddPostData(){
-		   var latitude = position.coords.latitude;
-		   var longitude = position.coords.longitude;
-		
-		   var formInfo = document.forms['info'];
+		   var latitude = geolocation.latitude;
+		   var longitude = geolocation.longitude;
 		   
-		   formInfo.elements["lat"].value = latitude;
-		   formInfo.elements["long"].value = longitude;
+		   document.getElementById("lat").value = latitude;
+		   document.getElementById("long").value = longitude;
 		}
  
         </script>
@@ -201,20 +168,17 @@
           </aside>
 
           <div class="content">
-            <form action = "database.php" method = "post">
-              <fieldset>
+            <form action = "public/controllers/database.php" method = "post">
                 <div class = "form-group">
-                  <input class = "form-control" name = "Location Name" placeholder = "Location Name" type = "text"/>
+                  <input class = "form-control" name = "name" placeholder = "Location Name" id = "name" type = "text"/>
                 </div>
-		<input type = "hidden" name = "lat" value = ""/>
-		<input type = "hidden" name = "long" value = ""/>
+		  <input type = "hidden" name = "lat" id = "lat" value = ""/>
+		  <input type = "hidden" name = "long" id = "long" value = ""/> 
                 <div class = "form-group">
                   <input type = "submit" name = "submitted" value = "Save My Location" onSubmit = "AddPostData();"/>
                 </div>
-              </fieldset>
             </form>
           </div>
-
         </div>
 </body>
 </html>
