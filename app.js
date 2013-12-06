@@ -8,9 +8,20 @@ var connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
 	password: 'friend100',
+	database: 'Leclado'
 });
 
 connection.connect();
+
+connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES("it works!", 10, 10)', function(err,results){
+		if (err){
+			//res.write("Got error :-(" + err);
+			console.log("Got error", err);
+			res.send("error");
+		} else{
+		    console.log("yay");
+		}
+	});
 
 var express = require('express');
 var routes = require('./routes');
@@ -29,6 +40,7 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
+app.use(express.bodyParser());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -52,17 +64,11 @@ app.post('/addlocation', function(req, res){
 		lat: lat,
 		lng: lng,
 	};
-	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES("it works!", 10, 10)', function(err,results){
-		if (err){
-			res.write("Got error :-(" + err);
-		}		
-	});
-	res.redirect('/');
+	
 });
-
-connection.end();
 
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
