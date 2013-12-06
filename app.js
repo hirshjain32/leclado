@@ -56,7 +56,11 @@ app.post('/addlocation', function(req, res){
 		lng: lng,
 	};
 
-	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES("it works!", 10, 10)', function(err,results){
+	//console.log(lat);
+	//console.log(lng);
+	console.log(name);
+
+	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES(?, 10, 10)', [name], function(err,results){
 		if (err){
 			//res.write("Got error :-(" + err);
 			console.log("Got error", err);
