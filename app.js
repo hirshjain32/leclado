@@ -63,7 +63,7 @@ app.post('/addlocation', function(req, res){
 			res.send("error");
 		} 
 	});
-	res.redirect('/');		
+	res.redirect('/geolocation');		
 	connection.end();
 });
 
