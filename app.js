@@ -5,9 +5,10 @@
 
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'hirshnishem',
-	password: 'friend100'
+	host: "localhost",
+	port: 3000,
+	user: root,
+	password: "friend100"
 });
 
 connection.connect();
@@ -47,12 +48,12 @@ app.post('/addlocation', function(req, res){
 	var lat = req.body.lat;
 	var lng = req.body.lng; 
 	var name = req.body.name; 
-	var obj {
+	var obj = {
 		name: name,
 		lat: lat,
 		lng: lng,
-	}
-}
+	};
+});
 
 connection.end();
 
