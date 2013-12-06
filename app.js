@@ -61,11 +61,10 @@ app.post('/addlocation', function(req, res){
 			//res.write("Got error :-(" + err);
 			console.log("Got error", err);
 			res.send("error");
-		} else{
-		    console.log("yay");
-		}
+		} 
 	});
-
+	res.redirect('/');		
+	connection.end();
 });
 
 
