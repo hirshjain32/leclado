@@ -56,8 +56,8 @@ app.post('/addlocation', function(req, res){
 		lng: lng,
 	};
 
-	//console.log(lat);
-	//console.log(lng);
+	console.log(lat);
+	console.log(lng);
 	console.log(name);
 
 	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES(?, 10, 10)', [name], function(err,results){
