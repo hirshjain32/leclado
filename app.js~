@@ -3,15 +3,6 @@
  * Module dependencies.
  */
 
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'hirshnishem',
-	password: 'friend100'
-})
-
-connection.connect();
-
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
@@ -42,6 +33,7 @@ app.get('/users', user.list);
 app.get('/geolocation',routes.geo);
 app.get('/onsuccess',routes.onsuccess);
 app.get('/database', routes.database);
+app.get('/parties.html', routes.parties);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
