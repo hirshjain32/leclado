@@ -89,14 +89,13 @@
                 // Check to see if this browser supports geolocation.
                 if (navigator.geolocation) 
                 {
-		        geolocation.latitude = 0;
-		        geolocation.longitude = 0;
+                        geolocation.latitude = 0;
+                        geolocation.longitude = 0;
  
                         // This is the location marker that we will be using
                         // on the map. Let's store a reference to it here so
                         // that it can be updated in several places.
                         var locationMarker = null;
- 
  
                         // Get the location of the user's browser using the
                         // native geolocation service. When we invoke this method
@@ -106,9 +105,8 @@
                         navigator.geolocation.getCurrentPosition(
                                 function( position )
                                 {
-		                        geolocation.latitude = position.coords.latitude;
-		                        geolocation.longitude = position.coords.longitude;
- 
+
+
                                         // Check to see if there is already a location.
                                         // There is a bug in FireFox where this gets
                                         // invoked more than once with a cahced result.
@@ -131,8 +129,13 @@
                                                 position.coords.latitude,
                                                 position.coords.longitude
                                         );
+                                        
+                                        geolocation.latitude = position.coords.latitude;
+                                        geolocation.longitude = position.coords.longitude;
+
                                         console.log(position.coords.altitude);
                                         map.panTo(newCenter)
+                                        alert(geolocation.latitude);
  
                                 },
                                 function( error )
