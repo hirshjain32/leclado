@@ -13,15 +13,6 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES("it works!", 10, 10)', function(err,results){
-		if (err){
-			//res.write("Got error :-(" + err);
-			console.log("Got error", err);
-			res.send("error");
-		} else{
-		    console.log("yay");
-		}
-	});
 
 var express = require('express');
 var routes = require('./routes');
@@ -64,7 +55,17 @@ app.post('/addlocation', function(req, res){
 		lat: lat,
 		lng: lng,
 	};
-	
+
+	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES("it works!", 10, 10)', function(err,results){
+		if (err){
+			//res.write("Got error :-(" + err);
+			console.log("Got error", err);
+			res.send("error");
+		} else{
+		    console.log("yay");
+		}
+	});
+
 });
 
 
