@@ -5,10 +5,9 @@
 
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-	host: "localhost",
-	port: 3000,
-	user: root,
-	password: "friend100"
+	host: 'localhost',
+	user: 'root',
+	password: 'friend100',
 });
 
 connection.connect();
@@ -53,9 +52,15 @@ app.post('/addlocation', function(req, res){
 		lat: lat,
 		lng: lng,
 	};
+	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES("it works!", 10, 10)', function(err,results){
+		if (err){
+			res.write("Got error :-(" + err);
+		}		
+	});
 });
 
 connection.end();
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
