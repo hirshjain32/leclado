@@ -43,6 +43,19 @@ app.get('/geolocation',routes.geo);
 app.get('/onsuccess',routes.onsuccess);
 app.get('/database', routes.database);
 
+app.post('/addlocation', function(req, res){
+	var lat = req.body.lat;
+	var lng = req.body.lng; 
+	var name = req.body.name; 
+	var obj {
+		name: name,
+		lat: lat,
+		lng: lng,
+	}
+}
+
+connection.end();
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

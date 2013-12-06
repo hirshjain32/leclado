@@ -157,7 +157,7 @@
 		   var longitude = geolocation.longitude;
 		   
 		   document.getElementById("lat").value = latitude;
-		   document.getElementById("long").value = longitude;
+		   document.getElementById("lng").value = longitude;
 		}
  
         </script>
@@ -173,7 +173,7 @@
                   <input class = "form-control" name = "name" placeholder = "Location Name" id = "name" type = "text"/>
                 </div>
 		  <input type = "hidden" name = "lat" id = "lat" value = ""/>
-		  <input type = "hidden" name = "long" id = "long" value = ""/> 
+		  <input type = "hidden" name = "lng" id = "lng" value = ""/> 
                 <div class = "form-group">
                   <input type = "submit" name = "submitted" value = "Save My Location" onSubmit = "AddPostData();"/>
                 </div>
