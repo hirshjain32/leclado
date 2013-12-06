@@ -57,6 +57,7 @@ app.post('/addlocation', function(req, res){
 			res.write("Got error :-(" + err);
 		}		
 	});
+	res.redirect('/');
 });
 
 connection.end();
