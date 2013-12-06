@@ -82,13 +82,15 @@
                 }
 
                 
-		var geolocation = {};
+		//var thing = new Object();
+        //thing.latitude = 0;
+        //thing.longitude = 0;   
+        
  
                 // Check to see if this browser supports geolocation.
                 if (navigator.geolocation) 
                 {
-                        geolocation.latitude = 0;
-                        geolocation.longitude = 0;
+                        
  
                         // This is the location marker that we will be using
                         // on the map. Let's store a reference to it here so
@@ -128,14 +130,17 @@
                                                 position.coords.longitude
                                         );
                                         
-                                        geolocation.latitude = position.coords.latitude;
-                                        geolocation.longitude = position.coords.longitude;
+                                        //thing.latitude = position.coords.latitude;
+                                        //thing.longitude = position.coords.longitude;
 
-                                        console.log(position.coords.altitude);
+                                        document.getElementById("lat").value = position.coords.latitude;
+                                        document.getElementById("lng").value = position.coords.longitude;
+
                                         console.log(position.coords.latitude);
+                                        console.log(position.coords.longitude);
 
                                         map.panTo(newCenter)
-                                        alert(geolocation.latitude);
+                                        //alert(geolocation.latitude);
  
                                 },
                                 function( error )
@@ -155,15 +160,15 @@
                 }
                 
 
-		function AddPostData(){
+		/* function AddPostData(){
 
-		   var latitude = geolocation.latitude;
-		   var longitude = geolocation.longitude;
+		   var latitude = thing.latitude;
+		   var longitude = thing.longitude;
 		   alert(latitude);
 		   document.getElementById("lat").value = latitude;
 		   document.getElementById("lng").value = longitude;
 
-		}
+		} */
 
         </script>
 
@@ -177,11 +182,10 @@
                 <div class = "form-group">
                   <input class = "form-control" name = "name" placeholder = "Location Name" id = "name" type = "text"/>
                 </div>
-                <script type = "text/javascript"> AddPostData(); </script>
                 <input type = "hidden" name = "lat" id = "lat" value = '' />
                 <input type = "hidden" name = "lng" id = "lng" value = '' /> 
                 <div class = "form-group">
-                  <input onsubmit = "AddPostData()" type = "submit" name = "submitted" value = "Save My Location" />
+                  <input type = "submit" name = "submitted" value = "Save My Location" />
                 </div>
             </form>
           </div>

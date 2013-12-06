@@ -43,27 +43,29 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/geolocation',routes.geo);
-app.get('/onsuccess',routes.onsuccess);
-app.get('/database', routes.database);
+
 
 app.post('/addlocation', function(req, res){
 	var lat = req.body.lat;
 	var lng = req.body.lng; 
 	var name = req.body.name; 
-
-
+	
 	console.log(lat);
 	console.log(lng);
 	console.log(name);
 
-	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES(?, 10, 10)', [name], function(err,results){
+
+	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES(?, ?, ?)', [name, lat, lng], function(err,results){
 		if (err){
 			//res.write("Got error :-(" + err);
 			console.log("Got error", err);
 			res.send("error");
 		} 
+
+
 	});
-	res.redirect('/geolocation');		
+	
+	res.redirect('/geolocation');
 	connection.end();
 });
 
@@ -72,3 +74,4 @@ http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
+	
