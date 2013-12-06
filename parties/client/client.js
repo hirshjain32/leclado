@@ -103,7 +103,7 @@ Template.attendance.canInvite = function () {
 };
 
 ///////////////////////////////////////////////////////////////////////////////
-// Map display
+// Map display. THIS SECTION IS PERTINENT TO OUR CODE
 
 // Use jquery to get the position clicked relative to the map element.
 var coordsRelativeToElement = function (element, event) {
@@ -118,7 +118,7 @@ Template.map.events({
     Session.set("selected", event.currentTarget.id);
   },
   'dblclick .map': function (event, template) {
-    if (! Meteor.userId()) // must be logged in to create events
+    if (! Meteor.userId()) // must be logged in to create events, WE DON'T NEED THIS
       return;
     var coords = coordsRelativeToElement(event.currentTarget, event);
     openCreateDialog(coords.x / 500, coords.y / 500);
@@ -137,7 +137,7 @@ Template.map.rendered = function () {
         return 10 + Math.sqrt(attending(party)) * 10;
       };
 
-      // Draw a circle for each party
+      // Draw a circle for each party. MAYBE INSTEAD CALL ADD MARKER IN GEOLOCATION 
       var updateCircles = function (group) {
         group.attr("id", function (party) { return party._id; })
         .attr("cx", function (party) { return party.x * 500; })
@@ -158,7 +158,7 @@ Template.map.rendered = function () {
       updateCircles(circles.transition().duration(250).ease("cubic-out"));
       circles.exit().transition().duration(250).attr("r", 0).remove();
 
-      // Label each with the current attendance count
+      // Label each with the current attendance count. DONT NEED THIS BUT COULD LABEL EACH WITH TITLE
       var updateLabels = function (group) {
         group.attr("id", function (party) { return party._id; })
         .text(function (party) {return attending(party) || '';})
@@ -196,7 +196,7 @@ Template.map.destroyed = function () {
 };
 
 ///////////////////////////////////////////////////////////////////////////////
-// Create Party dialog
+// Create Party dialog. THIS IS PERTINENT TO OUR CODE. FIGURE OUT HOW IT STORES THIS IS DATABASE
 
 var openCreateDialog = function (x, y) {
   Session.set("createCoords", {x: x, y: y});

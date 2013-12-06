@@ -21,7 +21,7 @@ Parties.allow({
   },
   update: function (userId, party, fields, modifier) {
     if (userId !== party.owner)
-      return false; // not the owner
+      return false; // not the owner. THIS CHECK MAY NOT BE NECESSARY
 
     var allowed = ["title", "description", "x", "y"];
     if (_.difference(fields, allowed).length)
@@ -33,7 +33,7 @@ Parties.allow({
     return true;
   },
   remove: function (userId, party) {
-    // You can only remove parties that you created and nobody is going to.
+    // You can only remove parties that you created and nobody is going to. THE NOBODY IS GOING TO PART MAY NOT BE NECESSARY BUT WE CAN USE THE FIRST PART FOR SECURITY REASONS
     return party.owner === userId && attending(party) === 0;
   }
 });

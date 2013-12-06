@@ -1,6 +1,29 @@
 <head>
   <title>All Tomorrow's Parties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <style type="text/css">
+ 
+                html,
+                body {
+                        height: 100% ;
+                        margin: 0px 0px 0px 0px ;
+                        overflow: hidden ;
+                        padding: 0px 0px 0px 0px ;
+                        width: 100% ;
+                        }
+ 
+                #mapContainer {
+                        height: 90% ;
+                        width: 100% ;
+                        }
+ 
+        </style>
+
+  <!--- Include jQuery and Google Map scripts. -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
 </head>
 
 <body>
@@ -54,6 +77,11 @@
 
 <template name="map">
   <div class="map">
+       
+    WHATSUPP
+       
+
+    <!--
     {{#constant}}
       <svg width="500" height="500">
         <circle class="callout" cx=-100 cy=-100></circle>
@@ -66,8 +94,34 @@
         <a href="http://www.openstreetmap.org/?lat=37.78212&lon=-122.40146&zoom=15&layers=M"
            target="_blank">OpenStreetMap</a> contributors</small>
     </div>
+    -->
   </div>
 </template>
+
+<script type = "text/javascript">
+Template.map.rendered = function() {
+    var mapContainer = $( "#mapContainer" );
+ 
+                        // Create the new Goole map controller using our
+                        // map (pass in the actual DOM object). Center it
+                        // above the first Geolocated IP address.
+                        
+                        var map = new google.maps.Map(
+                                mapContainer[ 0 ],
+                                {
+                                        zoom: 8,
+                                        center: new google.maps.LatLng(
+                                                40.700683,
+                                                -73.925972
+                                        ),
+                                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                                }
+                        );
+
+
+
+}
+</script>
 
 <template name="details">
   <div class="details">
