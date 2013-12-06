@@ -50,11 +50,7 @@ app.post('/addlocation', function(req, res){
 	var lat = req.body.lat;
 	var lng = req.body.lng; 
 	var name = req.body.name; 
-	var obj = {
-		name: name,
-		lat: lat,
-		lng: lng,
-	};
+
 
 	console.log(lat);
 	console.log(lng);
