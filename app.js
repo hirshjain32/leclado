@@ -42,7 +42,25 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
-app.get('/geolocation',routes.geo);
+//app.get('/geolocation',routes.geo);
+
+
+app.get('/geolocation', function(req, res) {
+        var arr = new Array();
+        
+        connection.query('SELECT * FROM Leclado', function(err, rows) {
+            for(i=0; i < rows.length; i++){
+               var placemark = {};
+               var location = rows[i];
+               placemark.lat = location.Latitude;
+               placemark.lng = location.Longitude;
+                        
+               arr.push(placemark);
+            }
+        });
+        var string = arr[0].lat;
+        res.send(string);
+});
 
 
 app.post('/addlocation', function(req, res){
