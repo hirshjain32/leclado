@@ -50,16 +50,17 @@ app.get('/geolocation', function(req, res) {
         
         connection.query('SELECT * FROM Leclado', function(err, rows) {
             for(i=0; i < rows.length; i++){
-               var placemark = {};
+               var placemark = new Object();
                var location = rows[i];
                placemark.lat = location.Latitude;
                placemark.lng = location.Longitude;
-                        
-               arr.push(placemark);
+               arr[i] = placemark;
+               console.log(placemark);
             }
-        });
-        var string = arr[0].lat;
-        res.send(string);
+        	var string = arr[8].lat;
+        	console.log(arr);	
+        	res.send(string);
+    	});
 });
 
 
@@ -73,18 +74,16 @@ app.post('/addlocation', function(req, res){
 	console.log(name);
 
 
-	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES(?, ?, ?)', [name, lat, lng], function(err,results){
+	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES(?, ?, ?)', [name, lat, lng], function(err){
 		if (err){
 			//res.write("Got error :-(" + err);
 			console.log("Got error", err);
 			res.send("error");
-		} 
-
+		}
 
 	});
 	
 	res.redirect('/geolocation');
-	connection.end();
 });
 
 
