@@ -2,9 +2,9 @@
 <html>
 <head>
         <title>Geocoding Browser Position Using Javascript's Geolocation API</title>
-
-	<link rel='stylesheet' href='/stylesheets/geo.css' style = "text/css" />
         <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' style="text/css" />
+	<link rel='stylesheet' href='/stylesheets/geo.css' style = "text/css" />
+
 
  
         <style type="text/css">
@@ -170,12 +170,8 @@
         </script>
 
 	<div class="container">
-          <aside>
-            <p>Leclado</p>
-          </aside>
 
-          <div class="content">
-            <form action = "/addlocation" method = "POST">
+            <form class = "navbar-form navbar-left" action = "/addlocation" method = "POST">
                 <div class = "form-group">
                   <input class = "form-control" name = "name" placeholder = "Location Name" id = "name" type = "text"/>
                 </div>
@@ -185,7 +181,6 @@
                   <input type = "submit" name = "submitted" value = "Save My Location" />
                 </div>
             </form>
-          </div>
         </div>
 </body>
 </html>

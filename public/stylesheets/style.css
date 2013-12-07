@@ -2,17 +2,13 @@ body {
   	padding: 50px;
   	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   	margin: 0;
-	background: url('/img/background.jpg') no-repeat center center fixed;
+	background: url('/img/realbackground.jpg') no-repeat center center fixed;
+	background-size: 100%;
 	z-index: -25;
 }
 
-.boxed {
-	padding: 0px;
-		
-	background-color: #FFFFFF;
-	border: 1px solid black;
-	z-index: -10;
-	opacity: 0.3;
+.btn {
+	font-family: 'Fenix', serif;
 }
 
 .geolocation {
@@ -20,9 +16,9 @@ body {
  	font-size: 30px;
  	font-color: ;
  	margin: 50px;
- 	font-family: 'Fenix', serif;
  	opacity: 0.9;
  	z-index: 1;
+
 }
 
 .onsuccess {
