@@ -81,10 +81,14 @@
                         return( marker );
                 }
 
+                var markers = new Array();
 
                 for (i = 0; i < arr.length; i++)
                 {
-                    addMarker(arr[i].lat, arr[i].lng, arr[i].Name);
+                    markers[i] = addMarker(arr[i].lat, arr[i].lng, arr[i].Name);
+                    google.maps.event.addListener(markers[i], 'click', function() {
+                        console.log(markers[i].title);
+                    });
                 }
                 
 		  
