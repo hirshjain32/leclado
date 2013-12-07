@@ -86,8 +86,9 @@
                 for (i = 0; i < arr.length; i++)
                 {
                     markers[i] = addMarker(arr[i].lat, arr[i].lng, arr[i].Name);
+                    //var name = markers[i].title;
                     google.maps.event.addListener(markers[i], 'click', function() {
-                        console.log(markers[i].title);
+                        alert(markers[i].title);
                     });
                 }
                 
