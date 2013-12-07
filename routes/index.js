@@ -8,6 +8,5 @@ exports.index = function(req, res){
 }
 /*
 exports.geo = function(req, res){
-    res.render('geolocation.ejs', );
-}
-*/
+    res.render('geolocation.ejs');
+}*/

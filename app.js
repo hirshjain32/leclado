@@ -32,9 +32,11 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.post('/addlocation', sql.addlocation);
 /*app.get('/geolocation',routes.geo);*/
 app.get('/geolocationform', sql.geolocationform);
-app.get('/addlocation', sql.addlocation);
+
+//app.get('/geolocation', routes.geo);
 
 
 http.createServer(app).listen(app.get('port'), function(){

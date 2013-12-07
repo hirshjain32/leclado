@@ -49,6 +49,6 @@ exports.addlocation = function(req, res){
 
 	});
 	
-	res.redirect('/geolocation');
+	res.redirect('/geolocationform');
 };
 
