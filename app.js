@@ -84,7 +84,6 @@ app.post('/addlocation', function(req, res){
 	});
 	
 	res.redirect('/geolocation');
-	connection.end();
 });
 
 
