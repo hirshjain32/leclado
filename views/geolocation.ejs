@@ -42,8 +42,8 @@
                 able to immediately load our Google Map.
         -->
         <script type="text/javascript">
-                var title2 = <%- JSON.stringify(title) %>
-                console.log(title2);
+                var arr = <%- JSON.stringify(arr) %>
+                console.log(arr[0].Name);
                 var mapContainer = $( "#mapContainer" );
  
                 // Create the new Goole map controller using our

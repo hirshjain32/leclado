@@ -25,7 +25,7 @@ exports.geolocationform = function(req, res) {
 	        placemark.Name = location.Name;
 	        arr[i] = placemark;
         }
-  	res.render('geolocation.ejs', {title: arr[0].Name}); 
+  	res.render('geolocation.ejs', {arr: arr});
   	}); 
 }
 
