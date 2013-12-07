@@ -2,12 +2,14 @@
 /*
  * GET home page.
  */
+var mysql = require('mysql');
+
 
 exports.index = function(req, res){
   res.render('index.ejs', { title: 'Leclado' });
-};
-
-exports.geo = function(req, res){
-
-    res.render('geolocation.ejs');
 }
+/*
+exports.geo = function(req, res){
+    res.render('geolocation.ejs', );
+}
+*/

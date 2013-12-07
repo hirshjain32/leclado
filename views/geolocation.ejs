@@ -27,7 +27,6 @@
         <!--- Include jQuery and Google Map scripts. -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-        <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
  
@@ -43,8 +42,8 @@
                 able to immediately load our Google Map.
         -->
         <script type="text/javascript">
- 
-                // Get the map container node.
+                var title2 = <%- JSON.stringify(title) %>
+                console.log(title2);
                 var mapContainer = $( "#mapContainer" );
  
                 // Create the new Goole map controller using our
@@ -162,7 +161,7 @@
 
 	<div class="container">
           <aside>
-            <p>LeClaDo</p>
+            <p>Leclado</p>
           </aside>
 
           <div class="content">
