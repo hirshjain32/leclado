@@ -87,10 +87,20 @@
                 {
                     markers[i] = addMarker(arr[i].lat, arr[i].lng, arr[i].Name);
                     //var name = markers[i].title;
-                    google.maps.event.addListener(markers[i], 'click', function() {
-                        alert('hey');
-                    });
+
+                   
                 }
+
+                google.maps.event.addListener(markers[0], 'click', function() {
+                        var arr2 = <%- JSON.stringify(arr) %>    
+                        console.log(0);
+                    });
+
+                /*google.maps.event.addListener(markers[1], 'click', function() {
+                        var arr2 = <%- JSON.stringify(arr) %>    
+                        console.log(1);
+                    });*/
+               
                 
 		  
         
