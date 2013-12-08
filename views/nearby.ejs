@@ -10,13 +10,13 @@
     <script type = "text/javascript">
        
         var arr = <%- JSON.stringify(arr) %>
-
+ 
+        document.write('<li>');
         for (i = 0; i < arr.length; i++)
         {
             var name = arr[i].Name;
-            var des = arr[i].Description + 'is the place';
-            console.log(name);
-            console.log(des);
+            var des = arr[i].Description;
+            document.write('<ul>' + name + '</ul>');
             //$(name).appendTo("body");
             //$(des).appendTo("body");
             /*var content_string = '<div id="content">' + '<div id="siteNotice">'+ '</div>'+
@@ -25,7 +25,7 @@
                                  '</div>'+'</div>'; */
 
         }                                
-
+        document.write('</li>');
     </script>
 
 
