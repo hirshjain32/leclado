@@ -1,5 +1,38 @@
 <!DOCTYPE html>
 <html>
+<head>
+     <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' style="text/css" />
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+</head>
+<body>
+
+    <script type = "text/javascript">
+       
+        var arr = <%- JSON.stringify(arr) %>
+
+        for (i = 0; i < arr.length; i++)
+        {
+            var name = arr[i].Name;
+            var des = arr[i].Description + 'is the place';
+            console.log(name);
+            console.log(des);
+            //$(name).appendTo("body");
+            //$(des).appendTo("body");
+            /*var content_string = '<div id="content">' + '<div id="siteNotice">'+ '</div>'+
+                                 '<h1 id="firstHeading" class="firstHeading">' + name + '</h1>'+
+                                 '<div id="bodyContent">'+'<p>' + des + '</p>'+
+                                 '</div>'+'</div>'; */
+
+        }                                
+
+    </script>
+
+
+
+  
     <p> HELLLOOOO <p>
     <p> <%= arr[0].Name %> </p>
+    <p> <%= arr[1].Name %> </p>
+</body> 
 </html>
