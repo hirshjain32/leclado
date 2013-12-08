@@ -81,6 +81,8 @@
                         return( marker );
                 }
 
+                var infowindow = new google.maps.InfoWindow();
+
                 var markers = new Array();
 
                 for (i = 0; i < arr.length; i++)
@@ -91,9 +93,9 @@
 
 
                     (function(temp_marker, temp_name) {
-                        google.maps.event.addListener(temp_marker, 'click', function() {
-                           var arr2 = <%- JSON.stringify(arr) %>    
-                           console.log(temp_name);
+                        google.maps.event.addListener(temp_marker, 'mouseover', function() {  
+                           infowindow.setContent(temp_name);
+                           infowindow.open(map,temp_marker);
                         });
                     }(marker, name));
                     
