@@ -2,7 +2,7 @@ body {
   	padding: 50px;
   	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   	margin: 0;
-	background: url('/img/realbackground.jpg') no-repeat center center fixed;
+	background: url('/img/background2.jpg') no-repeat center center fixed;
 	background-size: 100%;
 	z-index: -25;
 }
