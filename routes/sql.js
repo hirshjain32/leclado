@@ -23,6 +23,7 @@ exports.geolocationform = function(req, res) {
 	        placemark.lat = location.Latitude;
 	        placemark.lng = location.Longitude;	
 	        placemark.Name = location.Name;
+            placemark.Description = location.Description;
 	        arr[i] = placemark;
         }
   	res.render('geolocation.ejs', {arr: arr});
@@ -33,10 +34,11 @@ exports.geolocationform = function(req, res) {
 exports.addlocation = function(req, res){
 	var lat = req.body.lat;
 	var lng = req.body.lng; 
-	var name = req.body.name; 
+	var name = req.body.name;
+    var description = req.body.description;
 
 
-	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES(?, ?, ?)', [name, lat, lng], function(err){
+	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude, Description) VALUES(?, ?, ?, ?)', [name, lat, lng, description], function(err){
 		if (err){
 			//res.write("Got error :-(" + err);
 			console.log("Got error", err);

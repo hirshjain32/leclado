@@ -90,24 +90,25 @@
                     markers[i] = addMarker(arr[i].lat, arr[i].lng, arr[i].Name);
                     marker = markers[i];
                     name = markers[i].title;
+                    des = arr[i].Description;
+                    var content_string = '<div id="content">' + '<div id="siteNotice">'+ '</div>'+
+                                        '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+ 
+                                            '<div id="bodyContent">'+
+                                                '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' + 'Heritage Site.</p>'+
+                                            '</div>'+
+                                        '</div>';
 
-
-                    (function(temp_marker, temp_name) {
-                        google.maps.event.addListener(temp_marker, 'mouseover', function() {  
-                           infowindow.setContent(temp_name);
+                    (function(temp_marker, temp_description) {
+                        google.maps.event.addListener(temp_marker, 'click', function() {
+                           infowindow.setContent(temp_description);
                            infowindow.open(map,temp_marker);
                         });
-                    }(marker, name));
+                    }(marker, content_string));
                     
                 }
 
 
-              
-                       
-                
-		  
-        
- 
+
                 // Check to see if this browser supports geolocation.
                 if (navigator.geolocation) 
                 {
@@ -187,6 +188,7 @@
             <form class = "navbar-form navbar-left" action = "/addlocation" method = "POST">
                 <div class = "form-group">
                   <input class = "form-control" name = "name" placeholder = "Location Name" id = "name" type = "text"/>
+                  <input class = "form-control" name = "description" placeholder = "Description" id = "description" type = "text"/>
                 </div>
                 <input type = "hidden" name = "lat" id = "lat" value = '' />
                 <input type = "hidden" name = "lng" id = "lng" value = '' /> 
