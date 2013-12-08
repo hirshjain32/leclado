@@ -7,7 +7,8 @@
     <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' style = "text/css" />
     <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js" type = "text/javascript"></script>
     <script src = "http://code.jquery.com/jquery-1.9.1.js"></script>
-    <br> <br> <br> <br> <div class = "title">
+    <br> <br> <br> <br> <br> 
+    <div class = "title">
       <a href = "/">Leclado</a>
     </div>
     <div class = "inner-head"> </div>
@@ -20,7 +21,10 @@
     </div>
     <br> 
     <div class = "geolocation">
-       <a href="home" class="btn btn-large">Start!</a> 
+       <form method = "GET" action = "/home">
+         <input type = "submit" name = "submitted" class = "btn-large" value = "Start!" />
+      </form>
+      <!-- <a href="home" class="btn-large">Start!</a>  -->
 
     </div>
   </body>
