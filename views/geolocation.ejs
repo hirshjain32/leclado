@@ -129,13 +129,6 @@
  
                                         // Log that this is the initial position.
                                         console.log( "Initial Position Found" );
- 
-                                        // Add a marker to the map using the position.
-                                        locationMarker = addMarker(
-                                                position.coords.latitude,
-                                                position.coords.longitude,
-                                                "Initial Position"
-                                        );
 
                                         //update the center to current location
                                         var newCenter = new google.maps.LatLng(
