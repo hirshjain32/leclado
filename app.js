@@ -37,6 +37,7 @@ app.get('/home', routes.home);
 app.get('/users', user.list);
 app.post('/addlocation', sql.addlocation);
 app.get('/geolocationform', sql.geolocationform);
+app.post('/nearby', sql.nearby);
 
 // when node app called, creates port on localhost
 http.createServer(app).listen(app.get('port'), function(){

@@ -51,5 +51,30 @@ exports.addlocation = function(req, res){
 	});
 	
 	res.redirect('/geolocationform');
+}
+
+exports.nearby = function(req, res){
+	var lat = req.body.lat;
+	var lng = req.body.lng;
+	var arr = new Array();
+
+	connection.query('SELECT * FROM Leclado WHERE Latitude > ? - .5 && Latitude < ? + .5 && Longitude > ? - .5 && Longitude < ? + .5', [lat, lat, lng, lng], function(err,rows){
+		if (err){
+			console.log("Got error", err);
+			res.send("error");
+		}
+		for (i = 0; i < rows.length; i++)
+		{
+			var placemark = new Object();
+		 	var location = rows[i];
+	        placemark.lat = location.Latitude;
+	        placemark.lng = location.Longitude;	
+	        placemark.Name = location.Name;
+            placemark.Description = location.Description;
+	        arr[i] = placemark;
+		}
+		res.render('nearby.ejs', {arr: arr});
+	});
+
 };
 
