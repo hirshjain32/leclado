@@ -7,8 +7,13 @@ body {
 	z-index: -25;
 }
 
-.btn {
+.btn-large {
 	font-family: 'Fenix', serif;
+	background-color: #DCDCDC;	
+}
+
+.btn-large:hover {
+	background-color: #F2F2F2;
 }
 
 .geolocation {
@@ -33,14 +38,12 @@ body {
 .title {
 	text-align: center;
 	color: #FFFFFF;
-	font-size: 100px;
-	margin: 50px;
+	font-size: 120px;
 	font-family: 'Fenix', serif;
 	z-index: 3;
 }
 
 .subtext {
-	margin: 100px;
 	text-align: center;
 	color: #FFFFFF;
 	font-size: 30px;
