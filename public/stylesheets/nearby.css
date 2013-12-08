@@ -42,25 +42,6 @@ body {
 	margin: auto;
 }
 
-
-.title a{
-	color: #000000;
-	font-size: 150px;
-	font-family: 'Fenix', serif;
-	z-index: 3;
-	width: auto;
-	text-decoration: none;
-}
-
-.title a:hover{
-	text-decoration: none;
-	color: #000000;
-}
-
-.title {
-	text-align: center;
-}
-
 .introtext{
 	text-align: center;
 	color: #000000;

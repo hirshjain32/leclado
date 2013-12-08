@@ -53,6 +53,8 @@ exports.addlocation = function(req, res){
 	res.redirect('/geolocationform');
 }
 
+
+// gets the data from home.ejs and uses it to select specific data that has a particular location on the map. sends this selected data to nearby.ejs
 exports.nearby = function(req, res){
 	var lat = req.body.lat;
 	var lng = req.body.lng;

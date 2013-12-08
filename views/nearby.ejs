@@ -17,9 +17,11 @@
     <br>
     <div class = "attraction-info">
     <script type = "text/javascript">
-       
+        
+        // passes in array from sql.nearby
         var arr = <%- JSON.stringify(arr) %>
- 
+        
+        // creates table with name and description of arr's contents
         document.write('<table class = "table">');
         document.write('<th> Name </th>' + '<th> Description </th>')
         for (i = 0; i < arr.length; i++)
@@ -32,12 +34,7 @@
                document.write('<td>' + name + '</td>');
                 document.write('<td>' + des + '</td>');
             }
-            //$(name).appendTo("body");
-            //$(des).appendTo("body");
-            /*var content_string = '<div id="content">' + '<div id="siteNotice">'+ '</div>'+
-                                 '<h1 id="firstHeading" class="firstHeading">' + name + '</h1>'+
-                                 '<div id="bodyContent">'+'<p>' + des + '</p>'+
-                                 '</div>'+'</div>'; */
+            
             document.write('</tr>');
 
         }                                
