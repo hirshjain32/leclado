@@ -12,12 +12,6 @@ body {
 	margin: auto;
 }
 
-.inner-head {
-	width: 150px;
-	color: #000000;
-	z-index: -10;
-}
-
 .btn-large {
 	font-family: 'Fenix', serif;
 	background-color: #BABABA ;	
@@ -36,11 +30,6 @@ body {
 
 }
 
-.nav {	
-	width: 80px;
-	color: #000000;
-	margin: auto;
-}
 
 .introtext{
 	text-align: center;
@@ -57,4 +46,8 @@ body {
 	font-size: 20px;
 	text-align: center;
 	font-family: 'Fenix', serif;
+}
+
+td {
+	font-weight:;
 }
