@@ -1,12 +1,26 @@
 {
-  "name": "application-name",
+  "name": "leclado",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.4.6",
-    "ejs": "*"
+    "express": "~3.4.6",
+    "ejs": "*",
+    "mysql": "~2.0.0-rc2",
+    "node": "0.0.0"
+  },
+  "description": "leclado ======= Inspired by LEwis, CLArk, and DOra - our favorite explorers. https://www.codeship.io/projects/00572b80-41e9-0131-c280-2a2d03f17415/status",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hirshjain32/leclado.git"
+  },
+  "author": "hirshjain32",
+  "license": "None",
+  "bugs": {
+    "url": "https://github.com/hirshjain32/leclado/issues"
   }
 }
