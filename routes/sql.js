@@ -1,4 +1,4 @@
-
+// sets up the mysql connection so we can connect to the database
 var mysql = require('mysql');
 var connection = mysql.createConnection({
 	host: 'localhost',
@@ -7,10 +7,12 @@ var connection = mysql.createConnection({
 	database: 'Leclado'
 });
 
+// initializes connection to database so we can make queries
 connection.connect();
 
 var array = new Array();
 
+// queries the database to get every entry and store it in an array. array is then sent to geolocation.ejs and the page is rendered.
 exports.geolocationform = function(req, res) {
 
     var tester = "Hello";
@@ -30,7 +32,8 @@ exports.geolocationform = function(req, res) {
   	}); 
 }
 
-
+/* gets the data from geolocation.ejs and queries it into the database. redirects to geolocationform so that geolocation.ejs can be
+   rendered with the updated database */
 exports.addlocation = function(req, res){
 	var lat = req.body.lat;
 	var lng = req.body.lng; 

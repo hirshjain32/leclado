@@ -42,13 +42,13 @@
                 able to immediately load our Google Map.
         -->
         <script type="text/javascript">
+
+                // passes in array from geolocationform
                 var arr = <%- JSON.stringify(arr) %>
             
                 var mapContainer = $( "#mapContainer" );
  
-                // Create the new Goole map controller using our
-                // map (pass in the actual DOM object). Center it
-                // above the first Geolocated IP address.
+                // Create the new Goole map controller using our map 
                 map = new google.maps.Map(
                         mapContainer[ 0 ],
                         {
@@ -62,11 +62,9 @@
                 );
  
  
-                // I add a marker to the map using the given latitude
-                // and longitude location.
+                // Add a marker to the map using a given latitude and longitude 
                 function addMarker( latitude, longitude, label ){
-                        // Create the marker - this will automatically place it
-                        // on the existing Google map (that we pass-in).
+                        // Create the marker
                         var marker = new google.maps.Marker({
                                 map: map,
                                 position: new google.maps.LatLng(
@@ -75,16 +73,17 @@
                                 ),
                                 title: (label || "")
                         });
-
  
                         // Return the new marker reference.
                         return( marker );
                 }
 
+                // sets up pop up window 
                 var infowindow = new google.maps.InfoWindow();
 
                 var markers = new Array();
 
+                // adds each marker to the page from the passed in array and adds an event listener for each marker
                 for (i = 0; i < arr.length; i++)
                 {
                     markers[i] = addMarker(arr[i].lat, arr[i].lng, arr[i].Name);
@@ -97,13 +96,13 @@
                                                 '<p>' + des + '</p>'+
                                             '</div>'+
                                         '</div>';
+
                     (function(temp_marker, temp_description) {
                         google.maps.event.addListener(temp_marker, 'click', function() {
                            infowindow.setContent(temp_description);
                            infowindow.open(map,temp_marker);
                         });
-                    }(marker, content_string));
-                    
+                    }(marker, content_string));          
                 }
 
 
@@ -113,24 +112,16 @@
                 {
                         
  
-                        // This is the location marker that we will be using
-                        // on the map. Let's store a reference to it here so
-                        // that it can be updated in several places.
+                        // Sets up location marker for the map
                         var locationMarker = null;
  
-                        // Get the location of the user's browser using the
-                        // native geolocation service. When we invoke this method
-                        // only the first callback is requied. The second
-                        // callback - the error handler - and the third
-                        // argument - our configuration options - are optional.
+                        // Gets location of user's browser
                         navigator.geolocation.getCurrentPosition(
                                 function( position )
                                 {
 
 
                                         // Check to see if there is already a location.
-                                        // There is a bug in FireFox where this gets
-                                        // invoked more than once with a cahced result.
                                         if (locationMarker)
                                         {
                                                 return;
@@ -145,21 +136,19 @@
                                                 position.coords.longitude,
                                                 "Initial Position"
                                         );
+
                                         //update the center to current location
                                         var newCenter = new google.maps.LatLng(
                                                 position.coords.latitude,
                                                 position.coords.longitude
                                         );
                                         
-                                        //thing.latitude = position.coords.latitude;
-                                        //thing.longitude = position.coords.longitude;
-
+                                        // stores lat and lng on the document to be accessed by the html
                                         document.getElementById("lat").value = position.coords.latitude;
                                         document.getElementById("lng").value = position.coords.longitude;
 
-                                        map.panTo(newCenter)
-                                        //alert(geolocation.latitude);
- 
+                                        // centers map
+                                        map.panTo(newCenter) 
                                 },
                                 function( error )
                                 {
