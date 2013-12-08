@@ -31,8 +31,9 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-// get and post to specific pages and calls functions in sql.js and index.ejs
+// get and post to specific pages and calls functions in sql.js and index.js
 app.get('/', routes.index);
+app.get('/home', routes.home);
 app.get('/users', user.list);
 app.post('/addlocation', sql.addlocation);
 app.get('/geolocationform', sql.geolocationform);

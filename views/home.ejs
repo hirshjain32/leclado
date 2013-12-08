@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title><%= title %></title>
+    <title>Title</title>
     <link href='http://fonts.googleapis.com/css?family=Fenix' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/stylesheets/style.css' style = "text/css" />
     <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' style = "text/css" />
@@ -10,20 +11,23 @@
     <br> <br> <br> <br> <div class = "title">
       <p>Leclado</p>
     </div>
-    <div class = "inner-head"> </div>
-  </head>
+</head>
   <body>
-    <div class = "nav"> <p>   </p> </div>
     <br> <br> <br>
     <div class = "subtext">
       <p>Let's go exploring.</p>
     </div>
     <br> 
     <div class = "geolocation">
-       <a href="home" class="btn btn-large">Start!</a> 
+      <form method = "GET" action = "/geolocation">
+         <input type = "submit" name = "submitted" class = "btn-large" value = "Button 1 (Map)" />
+      </form>
+
+      <form method = "GET" action = "/geolocation">
+         <input type = "submit" name = "submitted" class = "btn-large" value = "Button 2" />
+      </form>
 
     </div>
-  </body>
+  </body> 
 </html>
-
 
