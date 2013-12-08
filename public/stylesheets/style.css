@@ -1,15 +1,16 @@
 body {
-  	padding: 50px;
   	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   	margin: 0;
 	background: url('/img/background2.jpg') no-repeat center center fixed;
-	background-size: 100%;
+	background-size: 100% 100%;
+	width: 100%;
 	z-index: -25;
+
 }
 
 .btn-large {
 	font-family: 'Fenix', serif;
-	background-color: #BABABA;	
+	background-color: #BABABA ;	
 }
 
 .btn-large:hover {
@@ -26,14 +27,12 @@ body {
 
 }
 
-.onsuccess {
-	text-align: center;
- 	font-size: 30px;
- 	font-color: ;
- 	margin: 50px;
- 	font-family: 'Fenix', serif;
- 	opacity: 0.9;
+.inner {
+	width: 80px;
+	color: #000000;
+	margin: auto;
 }
+
 
 .title {
 	text-align: center;
@@ -42,6 +41,7 @@ body {
 	font-family: 'Fenix', serif;
 	z-index: 3;
 	margin: 0.25em;
+	width: auto;
 }
 
 .subtext {
