@@ -2,16 +2,41 @@
 
 .container {
   overflow: hidden;
+  z-index: -10;
 }
 
-.container .content .form-group .form-control .btn-default {
-  
+.navbar-form {
+  vertical-align: center;
+  z-index: -10;
 }
 
+.btn {
 
+  font-family: 'Fenix', serif;
+  z-index: -10;
+}
 
-.content {
-  height: 90px;
-  background: #C7BEBE;
-  margin-left: 195px;
+.container {
+  font-family: 'Fenix', serif;
+  background-color: transparent;
+
+  vertical-align: center;
+  z-index: -10;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  margin-left: 0px;
+  font-family: 'Fenix', serif;
+  width: 10%;
+  z-index: -10;
+}
+
+.submission-control { 
+  font-family: 'Fenix', serif;
+  width: 75%; 
+
+  border: 1px solid #999999; 
+
+  z-index: -10;
 }

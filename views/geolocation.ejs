@@ -4,7 +4,7 @@
         <title>Geocoding Browser Position Using Javascript's Geolocation API</title>
         <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' style="text/css" />
 	<link rel='stylesheet' href='/stylesheets/geo.css' style = "text/css" />
-
+        <link href='http://fonts.googleapis.com/css?family=Fenix' rel='stylesheet' type='text/css'>
 
  
         <style type="text/css">
@@ -19,8 +19,9 @@
                         }
  
                 #mapContainer {
-                        height: 90% ;
+                        height: 92% ;
                         width: 100% ;
+                        z-index: -30;
                         }
  
         </style>
@@ -173,15 +174,13 @@
 
 	<div class="container">
 
-            <form class = "navbar-form navbar-left" action = "/addlocation" method = "POST">
+            <form class = "navbar-form" action = "/addlocation" method = "POST">
                 <div class = "form-group">
                   <input class = "form-control" name = "name" placeholder = "Location Name" id = "name" type = "text"/>
-                  <input class = "form-control" name = "description" placeholder = "Description" id = "description" type = "text"/>
-                </div>
+                  <input class = "submission-control" name = "description" placeholder = "Description" id = "description" type = "text"/>
                 <input type = "hidden" name = "lat" id = "lat" value = '' />
                 <input type = "hidden" name = "lng" id = "lng" value = '' /> 
-                <div class = "form-group">
-                  <input type = "submit" name = "submitted" value = "Save My Location" />
+                  <input type = "submit" class = "btn" name = "submitted" value = "Save My Location" />
                 </div>
             </form>
         </div>

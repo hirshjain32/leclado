@@ -1,11 +1,21 @@
 body {
   	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  	margin: 0;
+  	margin: 0;	
 	background: url('/img/background2.jpg') no-repeat center center fixed;
 	background-size: 100% 100%;
 	width: 100%;
 	z-index: -25;
 
+}
+.head {
+	width: 100%;
+	margin: auto;
+}
+
+.inner-head {
+	width: 150px;
+	color: #000000;
+	z-index: -10;
 }
 
 .btn-large {
@@ -20,14 +30,13 @@ body {
 .geolocation {
 	text-align: center;
  	font-size: 30px;
- 	font-color: ;
  	margin: 50px;
  	opacity: 0.9;
  	z-index: 1;
 
 }
 
-.inner {
+.nav {	
 	width: 80px;
 	color: #000000;
 	margin: auto;
