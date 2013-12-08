@@ -34,10 +34,6 @@ exports.addlocation = function(req, res){
 	var lat = req.body.lat;
 	var lng = req.body.lng; 
 	var name = req.body.name; 
-	
-	console.log(lat);
-	console.log(lng);
-	console.log(name);
 
 
 	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude) VALUES(?, ?, ?)', [name, lat, lng], function(err){
