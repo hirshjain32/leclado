@@ -1,0 +1,12 @@
+
+Some brief notes on how this project was set up:
+
+We used Express to set up a Node.js framework for our website. Both the front end and back end are in javascript. The front end uses Google Maps API, HTML, CSS.
+We are hosting our site on an external server through Amazon Web Services. 
+You can also run our site on localhost. Once you download and unzip the archive containing all of our project folders and files, save the entire repository somewhere and navigate to it in the Terminal. Set up a MYSQL database using PHPMYADMIN with username "root", password "friend100", database name "Leclado". The table in the database, also named "Leclado", should have four columns. One should be called "Name" of type varchar(50). "Latitude" and "Longitude" should be of type Decimal 10,6. "Description" should be of type varchar(3000). 
+Navigate to the folder containing all of the project files/subfolders in the terminal, and type "node app" in the terminal. Go to localhost:3000 and the page will be Leclado, locally hosted.
+Note: while our website relies heavily on the use of a SQL database, none of the information currently stored in it is actually true or useful. We populated the map with some random locations and descriptions just to see if it would work. 
+
+How to use:	
+To use our project, go to http://leclado.com:3000
+To begin, click the "start" button. The website will redirect to a map. To add a location to the map, enter a name for the location and a short description, then click the button. To view any location on the map, click the marker. If the location is not your current location (ie it has been cataloged by somebody else), then clicking on the placemark will display a short window with a title and description. 
