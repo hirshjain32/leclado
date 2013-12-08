@@ -3,7 +3,7 @@
 <head>
         <title>Geocoding Browser Position Using Javascript's Geolocation API</title>
         <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' style="text/css" />
-	<link rel='stylesheet' href='/stylesheets/geo.css' style = "text/css" />
+	    <link rel='stylesheet' href='/stylesheets/geo.css' style = "text/css" />
         <link href='http://fonts.googleapis.com/css?family=Fenix' rel='stylesheet' type='text/css'>
 
  
@@ -19,8 +19,9 @@
                         }
  
                 #mapContainer {
-                        height: 92%;
-                        width: 100%;
+                        height: 92% ;
+                        width: 100% ;
+                        z-index: -30;
                         }
  
         </style>
@@ -43,75 +44,13 @@
         -->
         <script type="text/javascript">
 
-                // passes in array from geolocationform
-                var arr = <%- JSON.stringify(arr) %>
-            
-                var mapContainer = $( "#mapContainer" );
- 
-                // Create the new Goole map controller using our map 
-                map = new google.maps.Map(
-                        mapContainer[ 0 ],
-                        {
-                                zoom: 8,
-                                center: new google.maps.LatLng(
-                                        40.700683,
-                                        -73.925972
-                                ),
-                                mapTypeId: google.maps.MapTypeId.ROADMAP
-                        }
-                );
- 
- 
-                // Add a marker to the map using a given latitude and longitude 
-                function addMarker( latitude, longitude, label ){
-                        // Create the marker
-                        var marker = new google.maps.Marker({
-                                map: map,
-                                position: new google.maps.LatLng(
-                                        latitude,
-                                        longitude
-                                ),
-                                title: (label || "")
-                        });
- 
-                        // Return the new marker reference.
-                        return( marker );
-                }
-
-                // sets up pop up window 
-                var infowindow = new google.maps.InfoWindow();
-
-                var markers = new Array();
-
-                // adds each marker to the page from the passed in array and adds an event listener for each marker
-                for (i = 0; i < arr.length; i++)
-                {
-                    markers[i] = addMarker(arr[i].lat, arr[i].lng, arr[i].Name);
-                    marker = markers[i];
-                    name = markers[i].title;
-                    des = arr[i].Description;
-                    var content_string = '<div id="content">' + '<div id="siteNotice">'+ '</div>'+
-                                        '<h1 id="firstHeading" class="firstHeading">' + name + '</h1>'+
-                                            '<div id="bodyContent">'+
-                                                '<p>' + des + '</p>'+
-                                            '</div>'+
-                                        '</div>';
-
-                    (function(temp_marker, temp_description) {
-                        google.maps.event.addListener(temp_marker, 'click', function() {
-                           infowindow.setContent(temp_description);
-                           infowindow.open(map,temp_marker);
-                        });
-                    }(marker, content_string));          
-                }
-
-
+                
 
                 // Check to see if this browser supports geolocation.
                 if (navigator.geolocation) 
                 {
                         
- 
+                        array = new Array();
                         // Sets up location marker for the map
                         var locationMarker = null;
  
@@ -142,23 +81,21 @@
                                                 position.coords.latitude,
                                                 position.coords.longitude
                                         );
+
+
                                         
                                         // stores lat and lng on the document to be accessed by the html
                                         document.getElementById("lat").value = position.coords.latitude;
                                         document.getElementById("lng").value = position.coords.longitude;
+                                        array.lat = positions.coords.latitude;
 
-                                        // centers map
-                                        map.panTo(newCenter) 
+                                        console.log(array.lat);
                                 },
                                 function( error )
                                 {
                                         console.log( "Something went wrong: ", error );
                                 },
-                                {
-                                        timeout: (5 * 1000),
-                                        maximumAge: (1000 * 60 * 15),
-                                        enableHighAccuracy: true
-                                }
+                                
                         );
                 } 
                 else
