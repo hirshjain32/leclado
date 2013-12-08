@@ -86,21 +86,22 @@
                 for (i = 0; i < arr.length; i++)
                 {
                     markers[i] = addMarker(arr[i].lat, arr[i].lng, arr[i].Name);
-                    //var name = markers[i].title;
+                    marker = markers[i];
+                    name = markers[i].title;
 
-                   
+
+                    (function(temp_marker, temp_name) {
+                        google.maps.event.addListener(temp_marker, 'click', function() {
+                           var arr2 = <%- JSON.stringify(arr) %>    
+                           console.log(temp_name);
+                        });
+                    }(marker, name));
+                    
                 }
 
-                google.maps.event.addListener(markers[0], 'click', function() {
-                        var arr2 = <%- JSON.stringify(arr) %>    
-                        console.log(0);
-                    });
 
-                /*google.maps.event.addListener(markers[1], 'click', function() {
-                        var arr2 = <%- JSON.stringify(arr) %>    
-                        console.log(1);
-                    });*/
-               
+              
+                       
                 
 		  
         
