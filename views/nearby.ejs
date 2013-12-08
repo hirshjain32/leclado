@@ -2,6 +2,7 @@
 <html>
 <head>
      <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' style="text/css" />
+     <link rel='stylesheet' href='/stylesheets/style.css' style="text/css" />
      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
      <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 </head>
@@ -11,28 +12,30 @@
        
         var arr = <%- JSON.stringify(arr) %>
  
-        document.write('<li>');
+        document.write('<table class = "table">');
+        document.write('<th> Name </th>' + '<th> Description </th>')
         for (i = 0; i < arr.length; i++)
         {
+            document.write('<tr>');
             var name = arr[i].Name;
             var des = arr[i].Description;
-            document.write('<ul>' + name + '</ul>');
+            if (name.length != 0 && des.length != 0)
+            {
+               document.write('<td>' + name + '</td>');
+                document.write('<td>' + des + '</td>');
+            }
             //$(name).appendTo("body");
             //$(des).appendTo("body");
             /*var content_string = '<div id="content">' + '<div id="siteNotice">'+ '</div>'+
                                  '<h1 id="firstHeading" class="firstHeading">' + name + '</h1>'+
                                  '<div id="bodyContent">'+'<p>' + des + '</p>'+
                                  '</div>'+'</div>'; */
+            document.write('</tr>');
 
         }                                
-        document.write('</li>');
+        document.write('</table>');
     </script>
 
 
-
-  
-    <p> HELLLOOOO <p>
-    <p> <%= arr[0].Name %> </p>
-    <p> <%= arr[1].Name %> </p>
 </body> 
 </html>

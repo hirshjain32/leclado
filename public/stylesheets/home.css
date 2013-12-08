@@ -5,6 +5,8 @@ body {
 	background-size: 100% 100%;
 	width: 100%;
 	z-index: -25;
+	margin-right: 40px;
+	margin-left: 40px;
 
 }
 .head {
@@ -13,7 +15,7 @@ body {
 }
 
 .inner-head {
-	width: 150px;
+	width: 110px;
 	color: #000000;
 	z-index: -10;
 }
@@ -43,23 +45,14 @@ body {
 }
 
 
-.title a{
+.title {
+	text-align: center;
 	color: #000000;
-	font-size: 150px;
+	font-size: 110px;
 	font-family: 'Fenix', serif;
 	z-index: 3;
 	margin: 0.25em;
 	width: auto;
-	text-decoration: none;
-}
-
-.title a:hover{
-	text-decoration: none;
-	color: #000000;
-}
-
-.title {
-	text-align: center;
 }
 
 .subtext {
@@ -68,4 +61,8 @@ body {
 	font-size: 50px;
 	font-family: 'Fenix', serif;
 	z-index: 4;
+	margin-right: 15%;
+	margin-left: 15%;
+	line-height: 1.1em;
+
 }
