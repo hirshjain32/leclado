@@ -37,7 +37,7 @@ exports.addlocation = function(req, res){
 	var name = req.body.name;
     var description = req.body.description;
 
-
+  
 	connection.query('INSERT INTO Leclado (Name, Latitude, Longitude, Description) VALUES(?, ?, ?, ?)', [name, lat, lng, description], function(err){
 		if (err){
 			//res.write("Got error :-(" + err);

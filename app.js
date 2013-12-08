@@ -35,6 +35,7 @@ app.get('/users', user.list);
 app.post('/addlocation', sql.addlocation);
 /*app.get('/geolocation',routes.geo);*/
 app.get('/geolocationform', sql.geolocationform);
+app.get('/test', routes.test)
 
 //app.get('/geolocation', routes.geo);
 
